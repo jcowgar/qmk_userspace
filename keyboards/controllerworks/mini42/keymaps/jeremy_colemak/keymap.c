@@ -14,6 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+#include <stdint.h>
 #include QMK_KEYBOARD_H
 
 // Row 1
@@ -52,14 +53,20 @@ const uint16_t PROGMEM percent_combo[] = {KC_S, KC_D, COMBO_END};
 const uint16_t PROGMEM colon_combo[] = {KC_T, KC_V, COMBO_END};
 const uint16_t PROGMEM semi_combo[] = {KC_N, KC_K, COMBO_END};
 const uint16_t PROGMEM underscore_combo[] = {KC_E, KC_H, COMBO_END};
+const uint16_t PROGMEM email_combo[] = {KC_W, KC_F, KC_J, COMBO_END};
+const uint16_t PROGMEM name_combo[] = {KC_J, KC_C, COMBO_END};
 
 enum combo_events {
+     EMAIL_COMBO,
+     NAME_COMBO,
      PIPE_GT_COMBO,
      DASH_GT_COMBO,
 };
 
 combo_t key_combos[] = {
-    // Ordered combos
+    // Ordered combos (must match order of combo_events)
+    COMBO(email_combo, KC_NO),
+    COMBO(name_combo, KC_NO),
     COMBO(pipe_gt_combo, KC_NO),
     COMBO(dash_gt_combo, KC_NO),
 
@@ -153,6 +160,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
   switch(combo_index) {
+    case EMAIL_COMBO:
+        if (pressed) {
+            SEND_STRING("jeremy@cowgar.com");
+        }
+        break;
+
+    case NAME_COMBO:
+        if (pressed) {
+            SEND_STRING("Jeremy Cowgar");
+        }
+        break;
+
     case PIPE_GT_COMBO:
       if (pressed) {
         SEND_STRING("|>");
