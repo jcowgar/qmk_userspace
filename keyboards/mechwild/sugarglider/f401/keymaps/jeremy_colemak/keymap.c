@@ -71,6 +71,7 @@ combo_t key_combos[] = {
 
     // Key based combos
     COMBO(and_combo, KC_AMPR),
+    COMBO(asterisk_combo, KC_ASTR),
     COMBO(at_combo, KC_AT),
     COMBO(backslash_combo, KC_BSLS),
     COMBO(backtick_combo, KC_GRV),
@@ -92,6 +93,7 @@ combo_t key_combos[] = {
     COMBO(percent_combo, KC_PERC),
     COMBO(plus_combo, KC_PLUS),
     COMBO(semi_combo, KC_SCLN),
+    COMBO(slash_combo, KC_SLSH),
     COMBO(tab_combo, KC_TAB),
     COMBO(tilda_combo, KC_TILD),
     COMBO(underscore_combo, KC_UNDS),
