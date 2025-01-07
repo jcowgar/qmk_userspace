@@ -7,6 +7,22 @@
 
 #include QMK_KEYBOARD_H
 
+#define JC_CENT LCTL_T(KC_ENT)
+#define JC_SBSP LSFT_T(KC_BSPC)
+#define JC_SDEL LSFT_T(KC_DEL)
+#define JC_STAB LSFT_T(KC_TAB)
+#define JC_FET  LT(_FN, KC_ENT)
+
+#define JC_A MT(MOD_LGUI, KC_A)
+#define JC_R MT(MOD_LALT, KC_R)
+#define JC_S MT(MOD_LCTL, KC_S)
+#define JC_T MT(MOD_LSFT, KC_T)
+
+#define JC_N MT(MOD_LSFT, KC_N)
+#define JC_E MT(MOD_LCTL, KC_E)
+#define JC_I MT(MOD_LALT, KC_I)
+#define JC_O MT(MOD_LGUI, KC_O)
+
 // Row 1
 const uint16_t PROGMEM tilda_combo[] = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM at_combo[] = {KC_W, KC_F, COMBO_END};
@@ -18,14 +34,14 @@ const uint16_t PROGMEM and_combo[] = {KC_U, KC_Y, COMBO_END};
 const uint16_t PROGMEM backtick_combo[] = {KC_Y, KC_QUOT, COMBO_END};
 
 // Row 2
-const uint16_t PROGMEM obracket_combo[] = {KC_A, KC_R, COMBO_END};
-const uint16_t PROGMEM obrace_combo[] = {KC_R, KC_S, COMBO_END};
-const uint16_t PROGMEM oparen_combo[] = {KC_S, KC_T, COMBO_END};
-const uint16_t PROGMEM exclamation_combo[] = {KC_T, KC_G, COMBO_END};
-const uint16_t PROGMEM equal_combo[] = {KC_M, KC_N, COMBO_END};
-const uint16_t PROGMEM cparen_combo[] = {KC_N, KC_E, COMBO_END};
-const uint16_t PROGMEM cbrace_combo[] = {KC_E, KC_I, COMBO_END};
-const uint16_t PROGMEM cbracket_combo[] = {KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM obracket_combo[] = {JC_A, JC_R, COMBO_END};
+const uint16_t PROGMEM obrace_combo[] = {JC_R, JC_S, COMBO_END};
+const uint16_t PROGMEM oparen_combo[] = {JC_S, JC_T, COMBO_END};
+const uint16_t PROGMEM exclamation_combo[] = {JC_T, KC_G, COMBO_END};
+const uint16_t PROGMEM equal_combo[] = {KC_M, JC_N, COMBO_END};
+const uint16_t PROGMEM cparen_combo[] = {JC_N, JC_E, COMBO_END};
+const uint16_t PROGMEM cbrace_combo[] = {JC_E, JC_I, COMBO_END};
+const uint16_t PROGMEM cbracket_combo[] = {JC_I, JC_O, COMBO_END};
 
 // Row 3
 const uint16_t PROGMEM backslash_combo[] = {KC_X, KC_C, COMBO_END};
@@ -37,12 +53,12 @@ const uint16_t PROGMEM pipe_gt_combo[] = {KC_COMMA, KC_DOT, COMBO_END};
 const uint16_t PROGMEM dash_gt_combo[] = {KC_DOT, KC_SLSH, COMBO_END};
 
 // Multiple Rows
-const uint16_t PROGMEM esc_combo[] = {KC_U, KC_N, COMBO_END};
-const uint16_t PROGMEM tab_combo[] = {KC_F, KC_T, COMBO_END};
-const uint16_t PROGMEM percent_combo[] = {KC_S, KC_D, COMBO_END};
-const uint16_t PROGMEM colon_combo[] = {KC_T, KC_V, COMBO_END};
+const uint16_t PROGMEM esc_combo[] = {KC_U, JC_N, COMBO_END};
+const uint16_t PROGMEM tab_combo[] = {KC_F, JC_T, COMBO_END};
+const uint16_t PROGMEM percent_combo[] = {JC_S, KC_D, COMBO_END};
+const uint16_t PROGMEM colon_combo[] = {JC_T, KC_V, COMBO_END};
 const uint16_t PROGMEM semi_combo[] = {KC_N, KC_K, COMBO_END};
-const uint16_t PROGMEM underscore_combo[] = {KC_E, KC_H, COMBO_END};
+const uint16_t PROGMEM underscore_combo[] = {JC_E, KC_H, COMBO_END};
 const uint16_t PROGMEM email_combo[] = {KC_W, KC_F, KC_J, COMBO_END};
 const uint16_t PROGMEM name_combo[] = {KC_J, KC_C, COMBO_END};
 
@@ -98,34 +114,28 @@ enum layer_names {
     _FN,
 };
 
-#define JC_CENT LCTL_T(KC_ENT)
-#define JC_SBSP LSFT_T(KC_BSPC)
-#define JC_SDEL LSFT_T(KC_DEL)
-#define JC_STAB LSFT_T(KC_TAB)
-#define JC_FET  LT(_FN, KC_ENT)
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_CLMK] = LAYOUT(                                                            
-      KC_Q,     KC_W,     KC_F,     KC_P,     KC_B,                         KC_J,     KC_L,     KC_U,     KC_Y,  KC_QUOT,  
-      KC_A,     KC_R,     KC_S,     KC_T,     KC_G,                         KC_M,     KC_N,     KC_E,     KC_I,     KC_O,  
+  [_CLMK] = LAYOUT(
+      KC_Q,     KC_W,     KC_F,     KC_P,     KC_B,                         KC_J,     KC_L,     KC_U,     KC_Y,  KC_QUOT,
+      JC_A,     JC_R,     JC_S,     JC_T,     KC_G,                         KC_M,     JC_N,     JC_E,     JC_I,     JC_O,
       KC_Z,     KC_X,     KC_C,     KC_D,     KC_V,    CW_TOGG,  _______,   KC_K,     KC_H,  KC_COMM,   KC_DOT,  KC_SLSH,
       KC_LGUI,  KC_LCTL,  KC_LALT,  MO(_NAV), KC_SPC,  JC_SBSP,  JC_SDEL,   JC_FET,MO(_NUM), KC_LALT,  KC_LCTL,  KC_LGUI
   ),
-  [_NAV] = LAYOUT(                                                 
-      _______,  _______,  _______,  _______,  _______,                    _______,  KC_HOME,    KC_UP,   KC_END,  _______,  
+  [_NAV] = LAYOUT(
+      _______,  _______,  _______,  _______,  _______,                    _______,  KC_HOME,    KC_UP,   KC_END,  _______,
       KC_LGUI,  KC_LALT,  KC_LCTL,  KC_LSFT,  _______,                    KC_PGUP,  KC_LEFT,  KC_DOWN,  KC_RGHT,  _______,
       _______,  _______,  _______,  _______,  _______, _______,  _______, _______,  KC_PGDN,  _______,  _______,  _______,
-      _______,  _______,  _______,  _______,  _______, _______,  _______, _______,  _______,  _______,  _______,  _______ 
-  ),                                                                                                                 
-  [_NUM] = LAYOUT(                                                                                                 
-      KC_MINS,     KC_7,     KC_8,     KC_9,  _______,                    _______,  _______,  _______,  _______,  QK_BOOT, 
+      _______,  _______,  _______,  _______,  _______, _______,  _______, _______,  _______,  _______,  _______,  _______
+  ),
+  [_NUM] = LAYOUT(
+      KC_MINS,     KC_7,     KC_8,     KC_9,  _______,                    _______,  _______,  _______,  _______,  QK_BOOT,
       KC_PLUS,     KC_4,     KC_5,     KC_6,  KC_ASTR,                     KC_EQL,   KC_DLR,  KC_HASH,  KC_PERC,  _______,
       KC_0,        KC_1,     KC_2,     KC_3,  KC_SLSH, _______,  _______, _______,  _______,  _______,  _______,  _______,
-      _______,  _______,  _______,  _______,  _______, _______,  _______, _______,  _______,  _______,  _______,  _______ 
-  ),                                                                                                                 
-  [_FN] = LAYOUT(                                                                                                
+      _______,  _______,  _______,  _______,  _______, _______,  _______, _______,  _______,  _______,  _______,  _______
+  ),
+  [_FN] = LAYOUT(
       KC_F15,   KC_F7,    KC_F8,    KC_F9,    KC_F10,                     _______,  _______,  _______,  _______,  _______,
-      KC_F14,   KC_F4,    KC_F5,    KC_F6,    KC_F11,                     _______,  KC_LGUI,  KC_LALT,  KC_LCTL,  KC_LSFT,  
+      KC_F14,   KC_F4,    KC_F5,    KC_F6,    KC_F11,                     _______,  KC_LGUI,  KC_LALT,  KC_LCTL,  KC_LSFT,
       KC_F13,   KC_F1,    KC_F2,    KC_F3,    KC_F12,  _______,  _______, _______,  _______,  _______,  _______,  _______,
       _______,  _______,  _______,  _______,  _______, _______,  _______, _______,  _______,  _______,  _______,  _______
   )
