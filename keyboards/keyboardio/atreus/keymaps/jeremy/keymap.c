@@ -3,6 +3,8 @@
 // this is the style you want to emulate.
 // This is the canonical layout file for the Quantum project. If you want to add another keyboard,
 
+#define COMBO_TERM 35
+
 #include QMK_KEYBOARD_H
 
 // Row 1
