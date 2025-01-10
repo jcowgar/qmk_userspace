@@ -51,13 +51,14 @@ const uint16_t PROGMEM plus_combo[] = {KC_K, KC_H, COMBO_END};
 const uint16_t PROGMEM minus_combo[] = {KC_H, KC_COMMA, COMBO_END};
 const uint16_t PROGMEM pipe_gt_combo[] = {KC_COMMA, KC_DOT, COMBO_END};
 const uint16_t PROGMEM dash_gt_combo[] = {KC_DOT, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM equal_gt_combo[] = {JC_N, KC_DOT, COMBO_END};
 
 // Multiple Rows
 const uint16_t PROGMEM esc_combo[] = {KC_U, JC_N, COMBO_END};
 const uint16_t PROGMEM tab_combo[] = {KC_F, JC_T, COMBO_END};
 const uint16_t PROGMEM percent_combo[] = {JC_S, KC_D, COMBO_END};
 const uint16_t PROGMEM colon_combo[] = {JC_T, KC_V, COMBO_END};
-const uint16_t PROGMEM semi_combo[] = {KC_N, KC_K, COMBO_END};
+const uint16_t PROGMEM semi_combo[] = {JC_N, KC_K, COMBO_END};
 const uint16_t PROGMEM underscore_combo[] = {JC_E, KC_H, COMBO_END};
 const uint16_t PROGMEM email_combo[] = {KC_W, KC_F, KC_J, COMBO_END};
 const uint16_t PROGMEM name_combo[] = {KC_J, KC_C, COMBO_END};
@@ -67,6 +68,7 @@ enum combo_events {
      NAME_COMBO,
      PIPE_GT_COMBO,
      DASH_GT_COMBO,
+     EQUAL_GT_COMBO
 };
 
 combo_t key_combos[] = {
@@ -75,6 +77,7 @@ combo_t key_combos[] = {
     COMBO(name_combo, KC_NO),
     COMBO(pipe_gt_combo, KC_NO),
     COMBO(dash_gt_combo, KC_NO),
+    COMBO(equal_gt_combo, KC_NO),
 
     // Key based combos
     COMBO(and_combo, KC_AMPR),
@@ -162,9 +165,15 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
       break;
 
     case DASH_GT_COMBO:
-      if (pressed) {
-          SEND_STRING("->");
-      }
-      break;
+        if (pressed) {
+            SEND_STRING("->");
+        }
+        break;
+
+    case EQUAL_GT_COMBO:
+        if (pressed) {
+            SEND_STRING("=>");
+        }
+        break;
   }
 }
