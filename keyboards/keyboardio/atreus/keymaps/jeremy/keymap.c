@@ -12,6 +12,8 @@
 #define JC_SDEL LSFT_T(KC_DEL)
 #define JC_STAB LSFT_T(KC_TAB)
 #define JC_FET  LT(_FN, KC_ENT)
+#define JC_SET  LT(_SYM, KC_ENT)
+#define JC_SSP  LT(_SYM, KC_SPC)
 
 #define JC_A MT(MOD_LGUI, KC_A)
 #define JC_R MT(MOD_LALT, KC_R)
@@ -60,7 +62,7 @@ const uint16_t PROGMEM percent_combo[] = {JC_S, KC_D, COMBO_END};
 const uint16_t PROGMEM colon_combo[] = {JC_T, KC_V, COMBO_END};
 const uint16_t PROGMEM semi_combo[] = {JC_N, KC_K, COMBO_END};
 const uint16_t PROGMEM underscore_combo[] = {JC_E, KC_H, COMBO_END};
-const uint16_t PROGMEM email_combo[] = {KC_W, KC_F, KC_J, COMBO_END};
+const uint16_t PROGMEM email_combo[] = {KC_W, KC_J, COMBO_END};
 const uint16_t PROGMEM name_combo[] = {KC_J, KC_C, COMBO_END};
 
 enum combo_events {
@@ -80,49 +82,56 @@ combo_t key_combos[] = {
     COMBO(equal_gt_combo, KC_NO),
 
     // Key based combos
-    COMBO(and_combo, KC_AMPR),
-    COMBO(asterisk_combo, KC_ASTR),
-    COMBO(at_combo, KC_AT),
-    COMBO(backslash_combo, KC_BSLS),
-    COMBO(backtick_combo, KC_GRV),
-    COMBO(caret_combo, KC_CIRC),
-    COMBO(cbrace_combo, KC_RCBR),
-    COMBO(cbracket_combo, KC_RBRC),
-    COMBO(colon_combo, KC_COLON),
-    COMBO(cparen_combo, KC_RPRN),
-    COMBO(dollar_combo, KC_DLR),
-    COMBO(equal_combo, KC_EQUAL),
+    //COMBO(and_combo, KC_AMPR),
+    //COMBO(asterisk_combo, KC_ASTR),
+    //COMBO(at_combo, KC_AT),
+    //COMBO(backslash_combo, KC_BSLS),
+    //COMBO(backtick_combo, KC_GRV),
+    //COMBO(caret_combo, KC_CIRC),
+    //COMBO(cbrace_combo, KC_RCBR),
+    //COMBO(cbracket_combo, KC_RBRC),
+    //COMBO(colon_combo, KC_COLON),
+    //COMBO(cparen_combo, KC_RPRN),
+    //COMBO(dollar_combo, KC_DLR),
+    //COMBO(equal_combo, KC_EQUAL),
     COMBO(esc_combo, KC_ESC),
-    COMBO(exclamation_combo, KC_EXLM),
-    COMBO(hash_combo, KC_HASH),
-    COMBO(minus_combo, KC_MINS),
-    COMBO(obrace_combo, KC_LCBR),
-    COMBO(obracket_combo, KC_LBRC),
-    COMBO(oparen_combo, KC_LPRN),
-    COMBO(or_combo, KC_PIPE),
-    COMBO(percent_combo, KC_PERC),
-    COMBO(plus_combo, KC_PLUS),
-    COMBO(semi_combo, KC_SCLN),
-    COMBO(slash_combo, KC_SLSH),
+    //COMBO(exclamation_combo, KC_EXLM),
+    //COMBO(hash_combo, KC_HASH),
+    //COMBO(minus_combo, KC_MINS),
+    //COMBO(obrace_combo, KC_LCBR),
+    //COMBO(obracket_combo, KC_LBRC),
+    //COMBO(oparen_combo, KC_LPRN),
+    //COMBO(or_combo, KC_PIPE),
+    //COMBO(percent_combo, KC_PERC),
+    //COMBO(plus_combo, KC_PLUS),
+    //COMBO(semi_combo, KC_SCLN),
+    //COMBO(slash_combo, KC_SLSH),
     COMBO(tab_combo, KC_TAB),
-    COMBO(tilda_combo, KC_TILD),
-    COMBO(underscore_combo, KC_UNDS),
+    //COMBO(tilda_combo, KC_TILD),
+    //COMBO(underscore_combo, KC_UNDS),
 };
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
     _CLMK,
-	_NAV,
-	_NUM,
+    _SYM,
+    _NAV,
+    _NUM,
     _FN,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_CLMK] = LAYOUT(
-      KC_Q,     KC_W,     KC_F,     KC_P,     KC_B,                         KC_J,     KC_L,     KC_U,     KC_Y,  KC_QUOT,
-      JC_A,     JC_R,     JC_S,     JC_T,     KC_G,                         KC_M,     JC_N,     JC_E,     JC_I,     JC_O,
-      KC_Z,     KC_X,     KC_C,     KC_D,     KC_V,    CW_TOGG,  _______,   KC_K,     KC_H,  KC_COMM,   KC_DOT,  KC_SLSH,
-      KC_LGUI,  KC_LCTL,  KC_LALT,  MO(_NAV), KC_SPC,  JC_SBSP,  JC_SDEL,   JC_FET,MO(_NUM), KC_LALT,  KC_LCTL,  KC_LGUI
+      KC_Q,     KC_W,     KC_F,     KC_P,     KC_B,                          KC_J,     KC_L,     KC_U,     KC_Y,  KC_QUOT,
+      JC_A,     JC_R,     JC_S,     JC_T,     KC_G,                          KC_M,     JC_N,     JC_E,     JC_I,     JC_O,
+      KC_Z,     KC_X,     KC_C,     KC_D,     KC_V,    CW_TOGG,  _______,    KC_K,     KC_H,  KC_COMM,   KC_DOT,  KC_SLSH,
+      MO(_FN),  MO(_FN),  MO(_FN),MO(_NAV), JC_SSP,    JC_SBSP,  JC_SDEL,   JC_SET,MO(_NUM),  MO(_FN),  MO(_FN),  MO(_FN)
+  ),
+  [_SYM] = LAYOUT(
+      KC_TILD,  KC_AT,    KC_PIPE,  KC_LBRC,  _______,                    _______,  KC_RBRC,  KC_ASTR,  KC_SCLN,   KC_DLR,
+      KC_LT,    KC_MINS,  KC_LPRN,  KC_UNDS,  KC_BSLS,                     KC_GRV,  KC_COLON, KC_RPRN,  KC_EQUAL,   KC_GT,
+      KC_PLUS,  KC_AMPR,  KC_HASH,  KC_LCBR,  _______, _______,  _______, KC_EXLM,  KC_RCBR,  KC_PERC,  KC_QUES,  KC_CIRC,
+      _______,  _______,  _______,  _______,  _______, _______,  _______, _______,  _______,  _______,  _______,  _______
   ),
   [_NAV] = LAYOUT(
       _______,  _______,  _______,  _______,  _______,                    _______,  KC_HOME,    KC_UP,   KC_END,  _______,
@@ -142,6 +151,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_F13,   KC_F1,    KC_F2,    KC_F3,    KC_F12,  _______,  _______, _______,  _______,  _______,  _______,  _______,
       _______,  _______,  _______,  _______,  _______, _______,  _______, _______,  _______,  _______,  _______,  _______
   )
+  //[_BLANK] = LAYOUT(
+  //    _______,  _______,  _______,  _______,  _______,                    _______,  _______,  _______,  _______,  _______,
+  //    _______,  _______,  _______,  _______,  _______,                    _______,  _______,  _______,  _______,  _______,
+  //    _______,  _______,  _______,  _______,  _______, _______,  _______, _______,  _______,  _______,  _______,  _______,
+  //    _______,  _______,  _______,  _______,  _______, _______,  _______, _______,  _______,  _______,  _______,  _______
+  //)
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
