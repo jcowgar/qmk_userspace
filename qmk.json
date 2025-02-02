@@ -4,6 +4,7 @@
         ["controllerworks/mini42", "jeremy_colemak"],
         ["mechwild/sugarglider/wide_oled/f401", "jeremy"],
         ["mechwild/sugarglider/f401", "jeremy_colemak"],
-        ["keyboardio/atreus", "jeremy"]
+        ["keyboardio/atreus", "jeremy"],
+        ["kilipan/zilpzalp", "jeremy"]
     ]
 }
