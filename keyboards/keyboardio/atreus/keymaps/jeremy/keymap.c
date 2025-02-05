@@ -130,13 +130,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_SYM] = LAYOUT(
       KC_TILD,  KC_AT,    KC_PIPE,  KC_LBRC,  _______,                    _______,  KC_RBRC,  KC_ASTR,  KC_SCLN,   KC_DLR,
       KC_LT,    KC_MINS,  KC_LPRN,  KC_UNDS,  KC_BSLS,                     KC_GRV,  KC_COLON, KC_RPRN,  KC_EQUAL,   KC_GT,
-      KC_PLUS,  KC_AMPR,  KC_HASH,  KC_LCBR,  _______, _______,  _______, KC_EXLM,  KC_RCBR,  KC_PERC,  KC_QUES,  KC_CIRC,
+      KC_PLUS,  KC_AMPR,  KC_HASH,  KC_LCBR,  KC_EXLM, _______,  _______, _______,  KC_RCBR,  KC_PERC,  KC_QUES,  KC_CIRC,
       _______,  _______,  _______,  _______,  _______, _______,  _______, _______,  _______,  _______,  _______,  _______
   ),
   [_NAV] = LAYOUT(
       _______,  _______,  _______,  _______,  _______,                    _______,  KC_HOME,    KC_UP,   KC_END,  _______,
       KC_LGUI,  KC_LALT,  KC_LCTL,  KC_LSFT,  _______,                    KC_PGUP,  KC_LEFT,  KC_DOWN,  KC_RGHT,  _______,
-      _______,  _______,  _______,  _______,  _______, _______,  _______, _______,  KC_PGDN,  _______,  _______,  _______,
+      _______,  _______,  _______,  _______,  _______, _______,  _______, KC_PGDN,  _______,  _______,  _______,  _______,
       _______,  _______,  _______,  _______,  _______, _______,  _______, _______,  _______,  _______,  _______,  _______
   ),
   [_NUM] = LAYOUT(
@@ -149,7 +149,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_F15,   KC_F7,    KC_F8,    KC_F9,    KC_F10,                     _______,  _______,  _______,  _______,  _______,
       KC_F14,   KC_F4,    KC_F5,    KC_F6,    KC_F11,                     _______,  KC_LGUI,  KC_LALT,  KC_LCTL,  KC_LSFT,
       KC_F13,   KC_F1,    KC_F2,    KC_F3,    KC_F12,  _______,  _______, _______,  _______,  _______,  _______,  _______,
-      _______,  _______,  _______,  _______,  _______, _______,  _______, _______,  _______,  _______,  _______,  _______
+      _______,  _______,  _______,  _______,  _______, _______,  _______, _______,  _______,  _______,  _______,  QK_BOOT
   )
   //[_BLANK] = LAYOUT(
   //    _______,  _______,  _______,  _______,  _______,                    _______,  _______,  _______,  _______,  _______,
