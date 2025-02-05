@@ -1,7 +1,7 @@
 # Common Commands
 
-| Command                                    | Description                     |
-| ------------------------------------------ | ------------------------------- |
+| Command                                      | Description                     |
+| -------------------------------------------- | ------------------------------- |
 | `qmk flash -kb keyboardio/atreus -km jeremy` | Build and flash Atreus firmware |
 
 # Resources

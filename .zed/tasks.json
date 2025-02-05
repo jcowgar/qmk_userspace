@@ -1,0 +1,11 @@
+[
+    {
+        "label": "Complie/Flash Atreus",
+        "command": "qmk flash -kb keyboardio/atreus -km jeremy",
+        "use_new_terminal": false,
+        "allow_concurrent_runs": false,
+        "reveal": "always",
+        "reveal_target": "dock",
+        "hide": "never"
+    }
+]
