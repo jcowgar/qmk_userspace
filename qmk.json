@@ -5,6 +5,7 @@
         ["mechwild/sugarglider/wide_oled/f401", "jeremy"],
         ["mechwild/sugarglider/f401", "jeremy_colemak"],
         ["keyboardio/atreus", "jeremy"],
-        ["kilipan/zilpzalp", "jeremy"]
+        ["kilipan/zilpzalp", "jeremy"],
+        ["keychron/q8/ansi", "jeremy"]
     ]
 }
