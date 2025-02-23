@@ -1,0 +1,5 @@
+#pragma once
+
+#define COMBO_TERM 35
+#define POINTING_DEVICE_AUTO_MOUSE_ENABLE
+
