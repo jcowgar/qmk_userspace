@@ -73,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL, KC_LWIN,  KC_LALT,           KC_SPC,           MO(_NAV), MO(_SYM),         JC_SET,            KC_RALT,            KC_LEFT, KC_DOWN, KC_RGHT),
 
     [_SYM] = LAYOUT_ansi_69(
-        _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,           _______,
+        KC_TILD, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,           _______,
         _______, KC_TILD, KC_AT,   KC_PIPE, KC_LBRC, _______, _______, KC_RBRC, KC_ASTR, KC_SCLN, KC_DLR,  _______, _______, _______,          _______,
         _______, KC_LT,   KC_MINS, KC_LPRN, KC_UNDS, KC_BSLS,          KC_GRV,  KC_COLN, KC_RPRN, KC_EQL,  KC_GT,   _______, _______,          _______,
         _______, KC_PLUS, KC_AMPR, KC_HASH, KC_LCBR, KC_EXLM, _______, _______, KC_RCBR, KC_PERC, KC_QUES, KC_CIRC, _______, _______,
