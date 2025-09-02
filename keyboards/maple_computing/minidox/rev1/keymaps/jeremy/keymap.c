@@ -20,6 +20,7 @@
 // Combos
 const uint16_t PROGMEM esc_combo[] = {KC_U, JC_N, COMBO_END};
 const uint16_t PROGMEM tab_combo[] = {KC_F, JC_T, COMBO_END};
+const uint16_t PROGMEM caps_word_combo[] = {JC_S, JC_T, COMBO_END};
 const uint16_t PROGMEM email_combo[] = {KC_W, KC_J, COMBO_END};
 const uint16_t PROGMEM name_combo[] = {KC_J, KC_C, COMBO_END};
 const uint16_t PROGMEM pipe_gt_combo[] = {KC_COMM, KC_DOT, COMBO_END};
@@ -42,6 +43,7 @@ combo_t key_combos[] = {
     COMBO(equal_gt_combo, KC_NO),
     COMBO(esc_combo, KC_ESC),
     COMBO(tab_combo, KC_TAB),
+    COMBO(caps_word_combo, CW_TOGG),
 };
 
 enum layer_names {
