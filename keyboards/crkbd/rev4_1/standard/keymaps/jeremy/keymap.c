@@ -93,7 +93,8 @@ enum custom_keycodes {
   TM_RENSES, // Rename session
   // Splits
   TM_HSP, // Horizontal split
-  TM_VSP  // Vertical split
+  TM_VSP,  // Vertical split
+  AP_GLOB // Apple Globe Key
 };
 
 // Defines for task manager and such
@@ -103,7 +104,7 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAK] = LAYOUT_split_3x6_3_ex2(
   //,--------------------------------------------------------------.   ,-------------------------------------------------------------.
-      XXXXXXX,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B, TG(_TMUX), TG(_TMUX),   KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT, XXXXXXX,
+      AP_GLOB,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B, TG(_TMUX), TG(_TMUX),   KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT, AP_GLOB,
   //|--------+--------+--------+--------+--------+--------+--------|   |-------+--------+--------+--------+--------+--------+--------|
       XXXXXXX,    JC_A,    JC_R,    JC_S,    JC_T,    KC_G,OSL(_TMUX), OSL(_TMUX),  KC_M,    JC_N,    JC_E,    JC_I,    JC_O, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------'   `-------+--------+--------+--------+--------+--------+--------|
@@ -201,6 +202,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return false;
             }
             break;
+
+        case AP_GLOB:
+           host_consumer_send(record->event.pressed ? AC_NEXT_KEYBOARD_LAYOUT_SELECT : 0);
+            return false;
 
         //
         // Tmux Layer
