@@ -97,6 +97,9 @@ enum custom_keycodes {
   AP_GLOB // Apple Globe Key
 };
 
+// Forward declarations
+bool process_tmux_key(uint16_t keycode, keyrecord_t *record);
+
 // Defines for task manager and such
 #define CALTDEL LCTL(LALT(KC_DEL))
 #define TSKMGR LCTL(LSFT(KC_ESC))
@@ -182,7 +185,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 }
 
 // Press the Tmux leader key and then the specified key.
-bool process_tmux_key(u_int16_t keycode, keyrecord_t *record) {
+bool process_tmux_key(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         tap_code16(KC_GRV);
         tap_code16(keycode);

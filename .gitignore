@@ -1,4 +1,5 @@
 # Junk files
+.direnv
 *.bak
 *.swp
 *~
