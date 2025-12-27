@@ -52,7 +52,8 @@ enum layer_names {
     _NAV,
     _NUM,
     _ADJUST,
-    _TMUX
+    _TMUX,
+    _WM,
 };
 
 enum custom_keycodes {
@@ -109,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,--------------------------------------------------------------.   ,-------------------------------------------------------------.
       AP_GLOB,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B, TG(_TMUX), TG(_TMUX),   KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT, AP_GLOB,
   //|--------+--------+--------+--------+--------+--------+--------|   |-------+--------+--------+--------+--------+--------+--------|
-      XXXXXXX,    JC_A,    JC_R,    JC_S,    JC_T,    KC_G,OSL(_TMUX), OSL(_TMUX),  KC_M,    JC_N,    JC_E,    JC_I,    JC_O, XXXXXXX,
+      MO(_WM),    JC_A,    JC_R,    JC_S,    JC_T,    KC_G,OSL(_TMUX), OSL(_TMUX),  KC_M,    JC_N,    JC_E,    JC_I,    JC_O, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------'   `-------+--------+--------+--------+--------+--------+--------|
       XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------.  ,--------+--------+--------+--------+--------+--------+--------|
@@ -177,6 +178,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   ),
 
+  [_WM] = LAYOUT_split_3x6_3_ex2(
+  //,--------------------------------------------------------------.   ,-------------------------------------------------------------.
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX,LGUI(KC_7),LGUI(KC_8),LGUI(KC_9), XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|   |-------+--------+--------+--------+--------+--------+--------|
+      _______, XXXXXXX, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX,LGUI(KC_4),LGUI(KC_5),LGUI(KC_6), XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------'   `-------+--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,LGUI(KC_1),LGUI(KC_2),LGUI(KC_3), XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
+                                      //`--------------------------'  `--------------------------'
+  ),
 };
 
 // Handle layer changes for tri-layer behavior
