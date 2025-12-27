@@ -22,8 +22,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 //#define USE_MATRIX_I2C
 
-//#define QUICK_TAP_TERM 0
-//#define TAPPING_TERM 100
+// Home row mods timing configuration
+#define TAPPING_TERM 175
+#define TAPPING_TERM_PER_KEY
+
+// Triggers hold as soon as another key is pressed while holding a mod-tap
+// This fixes Ctrl+Shift+N registering as just 'n' or 'N'
+#define PERMISSIVE_HOLD
+
+// Disable quick tap to prevent double-tap auto-repeat on home row mods
+#define QUICK_TAP_TERM 0
 
 #ifdef RGBLIGHT_ENABLE
     #define RGBLIGHT_EFFECT_BREATHING
