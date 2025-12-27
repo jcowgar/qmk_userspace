@@ -144,9 +144,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NUM] = LAYOUT_split_3x6_3_ex2(
   //,--------------------------------------------------------------.   ,-------------------------------------------------------------.
-      QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX,    KC_7,    KC_8,    KC_9, XXXXXXX, QK_BOOT,
+      QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    RM_TOGG, XXXXXXX,    KC_7,    KC_8,    KC_9, XXXXXXX, QK_BOOT,
   //|--------+--------+--------+--------+--------+--------+--------|   |-------+--------+--------+--------+--------+--------+--------|
-      XXXXXXX,  KC_DLR,  KC_DOT, KC_COMM, KC_UNDS, XXXXXXX, XXXXXXX,    XXXXXXX, KC_ASTR,    KC_4,    KC_5,    KC_6, KC_SLSH, XXXXXXX,
+      XXXXXXX,  KC_DLR,  KC_DOT, KC_COMM, KC_UNDS, XXXXXXX, XXXXXXX,    RM_NEXT, KC_ASTR,    KC_4,    KC_5,    KC_6, KC_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------'   `-------+--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, KC_PERC, KC_HASH, XXXXXXX, XXXXXXX,                      KC_PLUS,    KC_1,    KC_2,    KC_3, KC_MINS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
